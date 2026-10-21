@@ -1,0 +1,240 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #101014;
+    color: white;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+}
+
+header {
+    padding: 30px 8%;
+    border-bottom: 1px solid #292930;
+}
+
+header h1 {
+    font-size: 36px;
+    letter-spacing: 3px;
+}
+
+header h1 span {
+    color: #c89b3c;
+}
+
+header p {
+    color: #aaa;
+    margin-top: 8px;
+}
+
+main {
+    width: 84%;
+    max-width: 1100px;
+    margin: 45px auto;
+}
+
+.welcome {
+    background: linear-gradient(120deg, #292017, #191920);
+    padding: 45px 30px;
+    border-radius: 16px;
+    margin-bottom: 40px;
+}
+
+.welcome h2 {
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.welcome p {
+    color: #ccc;
+    line-height: 1.6;
+}
+
+.music-section h2 {
+    margin-bottom: 20px;
+}
+
+.upload-section {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.upload-section input[type="text"] {
+    width: 100%;
+    min-width: 0;
+    padding: 12px 14px;
+    border: 1px solid #303038;
+    border-radius: 8px;
+    background: #191920;
+    color: white;
+    font: inherit;
+}
+
+.upload-section input[type="text"]::placeholder {
+    color: #999;
+}
+
+.upload-section label {
+    align-self: center;
+    color: #ccc;
+}
+
+.upload-section input[type="file"] {
+    width: 100%;
+    min-width: 0;
+    color: #aaa;
+}
+
+.upload-section button {
+    padding: 12px 16px;
+    border: 0;
+    border-radius: 8px;
+    background: #c89b3c;
+    color: #101014;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.upload-section button:hover {
+    background: #ddb34f;
+}
+
+#music-list {
+    display: grid;
+    gap: 14px;
+}
+
+.empty-message {
+    color: #999;
+    padding: 25px;
+    border: 1px solid #303038;
+    border-radius: 12px;
+}
+
+.song-card {
+    display: grid;
+    gap: 16px;
+    padding: 16px;
+    border: 1px solid #303038;
+    border-radius: 12px;
+    background: #191920;
+}
+
+.song-info {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.song-info img,
+.default-cover {
+    width: 58px;
+    height: 58px;
+    flex: 0 0 58px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.default-cover {
+    display: grid;
+    place-items: center;
+    background: #292017;
+    font-size: 1.5rem;
+}
+
+.song-info p {
+    margin-top: 5px;
+    color: #aaa;
+}
+
+.song-card audio {
+    width: 100%;
+}
+
+footer {
+    text-align: center;
+    color: #888;
+    border-top: 1px solid #292930;
+    padding: 25px;
+    line-height: 1.8;
+}
+
+@media (max-width: 600px) {
+    main {
+        width: 90%;
+        margin: 25px auto;
+    }
+
+    .welcome {
+        padding: 28px 20px;
+    }
+
+    .welcome h2 {
+        font-size: 23px;
+    }
+
+    .upload-section {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        padding: 25px 5%;
+    }
+}
+
+.online-section {
+    margin-bottom: 35px;
+    padding: 25px;
+    background: linear-gradient(135deg, #1b1b24, #292017);
+    border: 1px solid #393942;
+    border-radius: 14px;
+}
+
+.online-section h2 {
+    margin-bottom: 12px;
+}
+
+.online-section p {
+    color: #bbb;
+    margin-bottom: 18px;
+}
+
+.online-section input {
+    display: block;
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 12px;
+    background: #101014;
+    border: 1px solid #444;
+    border-radius: 8px;
+    color: white;
+}
+
+.online-section button {
+    padding: 13px 20px;
+    background: #c89b3c;
+    color: #101014;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#online-music-player {
+    margin-top: 20px;
+}
+
+#online-music-player iframe {
+    width: 100%;
+    max-width: 600px;
+    height: 352px;
+    border: none;
+    border-radius: 12px;
+}
+

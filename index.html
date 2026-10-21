@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MAESTRO — Music</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>MAESTRO<span>.</span></h1>
+        <p>Your music. Your world.</p>
+    </header>
+
+    <main>
+        <section class="welcome">
+            <h2>Musiqa olamiga xush kelibsiz</h2>
+            <p>Sevimli musiqalaringni shu yerdan top.</p>
+        </section>
+
+        <section class="music-section">
+            <h2>🎵 Mening musiqalarim</h2>
+
+            <div id="music-list">
+                <p class="empty-message">
+                    Hozircha musiqalar mavjud emas.
+                </p>
+            </div>
+        </section>
+        
+<section class="online-section">
+    <h2>Internet musiqalari</h2>
+    <p>Spotify havolasini kiritib, musiqani shu yerda tingla.</p>
+
+    <input
+        type="url"
+        id="online-music-url"
+        placeholder="Spotify trek yoki albom havolasi"
+    >
+
+    <button id="add-online-music">Musiqani ko‘rsat</button>
+
+    <div id="online-music-player"></div>
+</section>
+
+    </main>
+
+    <footer>
+        <p>MAESTRO. © 2026</p>
+        <p>Created by Firdavs Safarov</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
