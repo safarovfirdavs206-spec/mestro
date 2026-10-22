@@ -155,3 +155,67 @@ const mySong = {
 
 songs.push(mySong);
 renderSongs(songs);
+
+
+const songs = [
+    {
+        title: "New Jeans (Jersey Club)",
+        artist: "Dxrkaii, Jiandro",
+        audio: "music/Dxrkaii%2C%20Jiandro%20-%20New%20Jeans%20(Jersey%20Club%20(2).mp3",
+        cover: ""
+    },
+    {
+        title: "EU SÓ QUERO FUNK (SLOWED)",
+        artist: "Noma'lum ijrochi",
+        audio: "music/EU%20S%C3%93%20QUERO%20FUNK%20(SLOWED).m4a",
+        cover: ""
+    },
+    {
+        title: "New Jeans Jersey Remix SLOWED",
+        artist: "Jiandro x Dxrkaii",
+        audio: "music/New%20Jeans%20Jersey%20Remix%20SLOWED%20-%20(Jiandro%20x%20Dxrkaii)%20(2).mp3",
+        cover: ""
+    },
+    {
+        title: "S9oXj3a4gZ4",
+        artist: "Noma'lum ijrochi",
+        audio: "music/S9oXj3a4gZ4%20(2).mp3",
+        cover: ""
+    },
+    {
+        title: "ZAKHELO (Slowed)",
+        artist: "Noma'lum ijrochi",
+        audio: "music/ZAKHELO%20(Slowed)%20-%20Official%20Music%20Video%20(2).mp3",
+        cover: ""
+    },
+    {
+        title: "Если Ты Со Мной",
+        artist: "Доминик Джокер",
+        audio: "music/%D0%94%D0%BE%D0%BC%D0%B8%D0%BD%D0%B8%D0%BA%20%D0%94%D0%B6%D0%BE%D0%BA%D0%B5%D1%80%20-%20%D0%95%D1%81%D0%BB%D0%B8%20%D0%A2%D1%8B%20%D0%A1%D0%BE%20%D0%9C%D0%BD%D0%BE%D0%B9.mp3",
+        cover: ""
+    },
+    {
+        title: "Если Ты Со Мной (2)",
+        artist: "Доминик Джокер",
+        audio: "music/%D0%94%D0%BE%D0%BC%D0%B8%D0%BD%D0%B8%D0%BA%20%D0%94%D0%B6%D0%BE%D0%BA%D0%B5%D1%80%20-%20%D0%95%D1%81%D0%BB%D0%B8%20%D0%A2%D1%8B%20%D0%A1%D0%BE%20%D0%9C%D0%BD%D0%BE%D0%B9%20(2).mp3",
+        cover: ""
+    },
+    {
+        title: "Сопрано",
+        artist: "Мот feat. Ани Лорак",
+        audio: "music/%D0%9C%D0%BE%D1%82_feat_%D0%90%D0%BD%D0%B8_%D0%9B%D0%BE%D1%80%D0%B0%D0%BA_%D0%A1%D0%BE%D0%BF%D1%80%D0%B0%D0%BD%D0%BE_%D0%BF%D1%80%D0%B5%D0%BC%D1%8C%D0%B5%D1%80%D0%B0_%D0%BA%D0%BB%D0%B8%D0%BF%D0%B0%2C_2017.mp3",
+        cover: ""
+    },
+    {
+        title: "Витаминка",
+        artist: "Тима Белорусских",
+        audio: "music/%D0%A2%D0%B8%D0%BC%D0%B0_%D0%91%D0%B5%D0%BB%D0%BE%D1%80%D1%83%D1%81%D1%81%D0%BA%D0%B8%D1%85_%D0%92%D0%B8%D1%82%D0%B0%D0%BC%D0%B8%D0%BD%D0%BA%D0%B0_%D0%9F%D1%80%D0%B5%D0%BC%D1%8C%D0%B5%D1%80%D0%B0_%D0%BE%D1%84%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE_%D0%BA%D0%BB%D0%B8%D0%BF%D0%B0.mp3",
+        cover: ""
+    },
+    {
+        title: "Розовое вино",
+        artist: "Элджей, Feduk",
+        audio: "music/%D0%AD%D0%BB%D0%B4%D0%B6%D0%B5%D0%B9%20%20%20Feduk%20-%20%D0%A0%D0%BE%D0%B7%D0%BE%D0%B2%D0%BE%D0%B5%20%D0%B2%D0%B8%D0%BD%D0%BE.mp3",
+        cover: ""
+    }
+];
