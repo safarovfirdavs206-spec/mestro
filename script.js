@@ -145,3 +145,13 @@ if (onlineButton && onlineUrl && onlinePlayer) {
         onlinePlayer.appendChild(player);
     });
 }
+
+const mySong = {
+    title: "New Jeans Jersey Remix SLOWED",
+    artist: "Jiandro x Dxrkaii",
+    audio: "music/New%20Jeans%20Jersey%20Remix%20SLOWED%20-%20(Jiandro%20x%20Dxrkaii)%20(2).mp3",
+    cover: ""
+};
+
+songs.push(mySong);
+renderSongs(songs);
