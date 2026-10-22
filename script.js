@@ -219,3 +219,250 @@ const songs = [
         cover: ""
     }
 ];
+
+
+import { useState } from "react";
+import "./App.css";
+
+const BASE_URL =
+  "https://raw.githubusercontent.com/safarovfirdavs206-spec/mestro/main/music/";
+
+const songs = [
+  {
+    title: "Conexão do Funk No Ritmo Do Dance",
+    artist: "DJ RMC, Dj Tchouzen, MC BF",
+    file: "01_DJ_RMC,_Dj_Tchouzen,_MC_BF,_Conexão_do_Funk_No_Ritmo_Do_Dance.flac",
+  },
+  {
+    title: "SEM DEMORA (Slowed)",
+    artist: "MXXNAVRA, SIXTINAGER, DJ Samir",
+    file: "02. MXXNAVRA, SIXTINAGER, DJ Samir - SEM DEMORA (Slowed).mp3",
+  },
+  {
+    title: "pursuit (Super Slowed)",
+    artist: "Isq",
+    file: "03. Isq - pursuit (super slowed).mp3",
+  },
+  {
+    title: "New Jeans (Jersey Club)",
+    artist: "Dxrkaii, Jiandro",
+    file: "Dxrkaii, Jiandro - New Jeans (Jersey Club (2).mp3",
+  },
+  {
+    title: "EU SÓ QUERO FUNK (Slowed)",
+    artist: "Funk",
+    file: "EU SÓ QUERO FUNK (SLOWED).m4a",
+  },
+  {
+    title: "LOW EFFORT (Slowed)",
+    artist: "Slowed",
+    file: "LOW EFFORT (Slowed).m4a",
+  },
+  {
+    title: "New Jeans Jersey Remix (Slowed)",
+    artist: "Jiandro x Dxrkaii",
+    file: "New Jeans Jersey Remix SLOWED - (Jiandro x Dxrkaii) (2).mp3",
+  },
+  {
+    title: "S9oXj3a4gZ4",
+    artist: "Unknown Artist",
+    file: "S9oXj3a4gZ4 (2).mp3",
+  },
+  {
+    title: "ZAKHELO (Slowed)",
+    artist: "Official Music Video",
+    file: "ZAKHELO (Slowed) - Official Music Video (2).mp3",
+  },
+  {
+    title: "Если Ты Со Мной",
+    artist: "Доминик Джокер",
+    file: "Доминик Джокер - Если Ты Со Мной.mp3",
+  },
+  {
+    title: "Сопрано",
+    artist: "Мот feat. Ани Лорак",
+    file: "Мот_feat_Ани_Лорак_Сопрано_премьера_клипа,_2017.mp3",
+  },
+  {
+    title: "Витаминка",
+    artist: "Тима Белорусских",
+    file: "Тима_Белорусских_Витаминка_Премьера_официального_клипа.mp3",
+  },
+  {
+    title: "Розовое вино",
+    artist: "Элджей, Feduk",
+    file: "Элджей   Feduk - Розовое вино.mp3",
+  },
+];
+
+function getAudioUrl(file) {
+  return BASE_URL + file.split("/").map(encodeURIComponent).join("/");
+}
+
+export default function App() {
+  const [currentSong, setCurrentSong] = useState(null);
+  const [search, setSearch] = useState("");
+  const [playing, setPlaying] = useState(false);
+
+  const filteredSongs = songs.filter((song) =>
+    `${song.title} ${song.artist}`
+      .toLowerCase()
+      .includes(search.toLowerCase())
+  );
+
+  function playSong(song) {
+    setCurrentSong(song);
+    setPlaying(true);
+  }
+
+  return (
+    <main className="maestro">
+      <header className="topbar">
+        <a className="logo" href="#">
+          <span className="logo-icon">M</span>
+          MAESTRO<span className="logo-dot">.</span>
+        </a>
+        <span className="online-status">
+          <span className="status-dot" />
+          YOUR MUSIC SPACE
+        </span>
+      </header>
+
+      <section className="hero">
+        <div className="hero-content">
+          <span className="eyebrow">YOUR SOUND. YOUR WORLD.</span>
+          <h1>
+            Feel the
+            <br />
+            <span>rhythm.</span>
+          </h1>
+          <p>
+            Sevimli musiqalaringni top, tingla va
+            o'z musiqiy olamingni yarat.
+          </p>
+          <a className="hero-button" href="#library">
+            <span>▶</span> MUSIQALARNI TINGLASH
+          </a>
+        </div>
+        <div className="hero-art" aria-hidden="true">
+          <div className="disc">
+            <div className="disc-center">M</div>
+          </div>
+          <div className="sound-wave">
+            {Array.from({ length: 23 }, (_, i) => (
+              <span
+                key={i}
+                style={{ height: `${18 + ((i * 37) % 75)}px` }}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="library" id="library">
+        <div className="section-heading">
+          <div>
+            <span className="eyebrow">YOUR COLLECTION</span>
+            <h2>Music library<span>.</span></h2>
+          </div>
+          <span className="song-count">{songs.length} TRACKS</span>
+        </div>
+
+        <div className="search-box">
+          <span>⌕</span>
+          <input
+            type="search"
+            placeholder="Qo'shiq yoki ijrochini qidir..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+        </div>
+
+        <div className="track-header">
+          <span>#</span>
+          <span>TRACK / ARTIST</span>
+          <span>PLAY</span>
+        </div>
+
+        <div className="track-list">
+          {filteredSongs.map((song, index) => (
+            <div
+              className={`track ${
+                currentSong?.file === song.file ? "active-track" : ""
+              }`}
+              key={song.file}
+            >
+              <span className="track-number">
+                {currentSong?.file === song.file && playing
+                  ? "♫"
+                  : String(index + 1).padStart(2, "0")}
+              </span>
+
+              <div className="track-info">
+                <div className="cover">
+                  {song.title.charAt(0).toUpperCase()}
+                </div>
+                <div className="track-text">
+                  <strong>{song.title}</strong>
+                  <span>{song.artist}</span>
+                </div>
+              </div>
+
+              <button
+                className="play-button"
+                aria-label={`Play ${song.title}`}
+                onClick={() => playSong(song)}
+              >
+                {currentSong?.file === song.file && playing ? "♫" : "▶"}
+              </button>
+            </div>
+          ))}
+
+          {filteredSongs.length === 0 && (
+            <p className="empty-message">Bu nomdagi musiqa topilmadi.</p>
+          )}
+        </div>
+      </section>
+
+      <footer className="footer">
+        <span>MAESTRO<span className="logo-dot">.</span></span>
+        <span>MADE FOR MUSIC LOVERS</span>
+      </footer>
+
+      <div className="player">
+        <div className="player-song">
+          <div className="cover player-cover">
+            {currentSong ? currentSong.title.charAt(0) : "M"}
+          </div>
+          <div className="track-text">
+            <strong>{currentSong?.title || "MAESTRO PLAYER"}</strong>
+            <span>{currentSong?.artist || "Musiqa tanlanmagan"}</span>
+          </div>
+        </div>
+
+        <div className="player-controls">
+          <button
+            className="main-play"
+            disabled={!currentSong}
+            onClick={() => setPlaying((value) => !value)}
+          >
+            {playing ? "Ⅱ" : "▶"}
+          </button>
+          <span className="player-caption">
+            {currentSong ? "NOW PLAYING" : "CHOOSE YOUR TRACK"}
+          </span>
+        </div>
+
+        <audio
+          key={currentSong?.file || "empty"}
+          src={currentSong ? getAudioUrl(currentSong.file) : undefined}
+          autoPlay={playing && Boolean(currentSong)}
+          controls
+          onPlay={() => setPlaying(true)}
+          onPause={() => setPlaying(false)}
+          onEnded={() => setPlaying(false)}
+        />
+      </div>
+    </main>
+  );
+}
